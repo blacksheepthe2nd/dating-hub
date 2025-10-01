@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog: AI Matchmaking Skepticism - Dating Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .pink-brand { background-color: #ec4899; }
+        .pink-brand-hover { background-color: #db2777; }
+        .text-brand { color: #ec4899; }
+        .header-bg {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            color: white;
+        }
+        .content-card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            line-height: 1.75;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+                <div class="flex justify-start lg:w-0 lg:flex-1">
+                    <a href="{% url 'home' %}" class="flex items-center space-x-2">
+                        <svg class="h-8 w-8 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                        </svg>
+                        <span class="text-2xl font-extrabold tracking-tight text-gray-900">Dating Hub</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-8 font-medium">
+                    <a href="{% url 'about' %}" class="text-gray-500 hover:text-brand transition duration-150 ease-in-out">About Us</a>
+                    <a href="{% url 'pros_cons' %}" class="text-gray-500 hover:text-brand transition duration-150 ease-in-out">Pros & Cons</a>
+                    <a href="{% url 'blog' %}" class="text-gray-500 hover:text-brand transition duration-150 ease-in-out">Blog</a>
+                    <a href="{% url 'known_websites' %}" class="text-gray-500 hover:text-brand transition duration-150 ease-in-out">Known Websites</a>
+                </nav>
+
+                <div class="md:hidden flex items-center">
+                    <button type="button" class="mobile-menu-button bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+                    <a href="{% url 'home' %}#join-cta" class="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-md text-base font-semibold text-white pink-brand hover:pink-brand-hover transition duration-300 ease-in-out">
+                        Get Latest Trends
+                    </a>
+                </div>
+            </div>
+
+            <div class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-40">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="{% url 'home' %}" class="text-gray-600 hover:bg-pink-50 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Home</a>
+                    <a href="{% url 'about' %}" class="text-gray-600 hover:bg-pink-50 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">About Us</a>
+                    <a href="{% url 'pros_cons' %}" class="text-gray-600 hover:bg-pink-50 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Pros & Cons</a>
+                    <a href="{% url 'known_websites' %}" class="text-gray-600 hover:bg-pink-50 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Known Websites</a>
+                    <a href="{% url 'blog' %}" class="text-gray-600 hover:bg-pink-50 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Blog</a>
+                    <a href="{% url 'home' %}#join-cta" class="text-gray-600 hover:bg-pink-50 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Get Latest Trends</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="header-bg py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-sm font-semibold mb-2 opacity-90">BLOG INSIGHT</p>
+                <h1 class="text-4xl font-extrabold sm:text-5xl tracking-tight">
+                    Beyond the Algorithm: Why AI Matchmaking Needs Skepticism
+                </h1>
+                <p class="mt-4 text-xl opacity-90">
+                    Understanding the limits of technology when searching for human connection.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="content-card">
+                    <div class="text-gray-500 text-sm mb-6 border-b pb-4">
+                        Published September 2025 | By The Dating Hub Research Team
+                    </div>
+
+                    <p class="text-lg text-gray-700 mb-6">
+                        AI is the buzzword of 2025, and dating apps are rapidly integrating advanced machine learning to predict compatibility. While this sounds like a sci-fi dream, it's essential to approach AI matchmaking with skepticism. Algorithms excel at matching **stated preferences** (e.g., height, job, interests) but fail at predicting **emotional chemistry, long-term resilience, or shared humor**. AI can show you who you *should* like based on past data, but it can't capture the magic of unexpected connection.
+                    </p>
+
+                    <img class="w-full h-auto rounded-lg my-8 shadow-md" src="https://placehold.co/800x400/9333ea/ffffff?text=AI+Algorithm+Concept" alt="Image of abstract data points and lines forming a connection network or brain." />
+
+                    <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">The Pitfall of Data Over Destiny</h2>
+                    <p class="text-gray-700 mb-6">
+                        The core danger of relying too heavily on AI is the **'data over destiny'** trap. If the AI suggests a 95% match, users are often discouraged from looking at people rated 70%, even though those lower-rated matches might have surprising, unquantifiable chemistry. Your job as a strategic dater is to use AI as a *filter* for immediate dealbreakers, not as a *substitute* for your gut feeling. Always leave room for the anomaly—the person who looks wrong on paper but feels right in person.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Strategic Use of AI Tools</h2>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+                        <li>**Hard Filters Only:** Use AI for clear non-negotiables (age, location, smoking status).</li>
+                        <li>**Ignore the Score:** Treat the match percentage as a suggestion, not a mandate.</li>
+                        <li>**Trust Yourself:** If a profile below the score feels intriguing, follow that intuition.</li>
+                    </ul>
+
+                    <div class="mt-10 text-center border-t pt-6">
+                        <p class="text-xl font-semibold text-gray-800 mb-4">Ready for the next trend?</p>
+                        <a href="{% url 'blog' %}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white pink-brand hover:pink-brand-hover transition duration-300 ease-in-out">
+                            View All Blog Posts
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-center text-center sm:text-left border-b border-gray-700 pb-8 mb-8">
+                <div class="flex items-center space-x-2 mb-4 sm:mb-0">
+                    <span class="text-xl font-extrabold tracking-tight">Dating Hub</span>
+                </div>
+                <div class="flex flex-wrap justify-center sm:justify-end space-x-6 text-sm">
+                    <a href="{% url 'home' %}" class="hover:text-brand">Home</a>
+                    <a href="{% url 'privacy' %}" class="hover:text-brand">Privacy Policy</a>
+                    <a href="{% url 'terms' %}" class="hover:text-brand">Terms Policy</a>
+                    <a href="{% url 'known_websites' %}" class="hover:text-brand">Known Websites</a>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 text-sm">
+                &copy; 2025 Dating Hub. All rights reserved. | An Independent Educational Resource.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener("DOMContentLoaded", function() {
+            const mobileMenuButton = document.querySelector(".mobile-menu-button");
+            const mobileMenu = document.querySelector(".mobile-menu");
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener("click", function() {
+                    mobileMenu.classList.toggle("hidden");
+                    
+                    // Toggle hamburger icon
+                    const icon = mobileMenuButton.querySelector("svg");
+                    if (mobileMenu.classList.contains("hidden")) {
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+                    } else {
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+                    }
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener("click", function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.add("hidden");
+                        const icon = mobileMenuButton.querySelector("svg");
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service – Dating Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .pink-brand { background-color: #ec4899; }
+        .text-brand { color: #ec4899; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+                <div class="flex justify-start lg:w-0 lg:flex-1">
+                    <a href="{% url 'home' %}" class="flex items-center space-x-2">
+                        <svg class="h-8 w-8 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 2m0 0l-2-2m2 2v4M10 6h4a2 2 0 012 2v6a2 2 0 01-2 2h-4a2 2 0 01-2-2V8a2 2 0 012-2z"/>
+                        </svg>
+                        <span class="text-2xl font-extrabold tracking-tight text-gray-900">Dating Hub</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-8 font-medium">
+                    <a href="{% url 'about' %}" class="text-gray-500 hover:text-pink-600 transition duration-150 ease-in-out">About Us</a>
+                    <a href="{% url 'pros_cons' %}" class="text-gray-500 hover:text-pink-600 transition duration-150 ease-in-out">Pros & Cons</a>
+                    <a href="{% url 'blog' %}" class="text-gray-500 hover:text-pink-600 transition duration-150 ease-in-out">Blog</a>
+                    <a href="{% url 'known_websites' %}" class="text-gray-500 hover:text-pink-600 transition duration-150 ease-in-out">Known Websites</a>
+                </nav>
+
+                <div class="md:hidden flex items-center">
+                    <button type="button" class="mobile-menu-button bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+                    <a href="{% url 'home' %}#join-cta" class="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-md text-base font-semibold text-white bg-pink-500 hover:bg-pink-600 transition duration-300 ease-in-out">
+                        Get Latest Trends
+                    </a>
+                </div>
+            </div>
+
+            <div class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-40">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="{% url 'home' %}" class="text-gray-600 hover:bg-pink-50 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Home</a>
+                    <a href="{% url 'about' %}" class="text-gray-600 hover:bg-pink-50 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">About Us</a>
+                    <a href="{% url 'pros_cons' %}" class="text-gray-600 hover:bg-pink-50 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Pros & Cons</a>
+                    <a href="{% url 'known_websites' %}" class="text-gray-600 hover:bg-pink-50 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Known Websites</a>
+                    <a href="{% url 'blog' %}" class="text-gray-600 hover:bg-pink-50 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Blog</a>
+                    <a href="{% url 'home' %}#join-cta" class="text-gray-600 hover:bg-pink-50 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Get Latest Trends</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-10">
+        <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg">
+            <h1 class="text-3xl font-bold mb-6 text-gray-900 text-center border-b pb-4">Terms of Service</h1>
+            
+            <div class="text-gray-700 space-y-6">
+                
+                <div class="last-updated text-center">
+                    <p class="text-sm text-gray-500">Last Updated: October 26, 2025</p>
+                </div>
+
+                <p>These Terms of Service ("Agreement") are a legal contract between you ("User," "you," or "your") and **Dating Hub Company** ("Company," "we," "us," or "our") concerning your use of the Dating Hub website and any related applications, products, and services (collectively, the "Service").</p>
+
+                <p>By accessing or using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service, our <a href="{% url 'privacy' %}" class="text-brand hover:underline">Privacy Policy</a>, and any other policies or guidelines we may post. If you do not agree with this Agreement, you must not use or access the Service.</p>
+
+                <h2 class="text-2xl font-semibold mt-6">1. Acceptance of Terms</h2>
+                <p>By creating an account and using the Service, you represent and warrant that you are at least 18 years of age or older and have the legal capacity to enter into a binding contract with us. The Service is not intended for use by anyone under the age of 18. If we discover that you are under this age, we will immediately terminate your account and remove all of your data from our systems.</p>
+
+                <h2 class="text-2xl font-semibold mt-6">2. Your Account</h2>
+                <p>To use the Service, you must register for an account. You are solely responsible for:</p>
+                <ul class="list-disc ml-6 space-y-2">
+                    <li>Maintaining the confidentiality of your login credentials.</li>
+                    <li>All activities that occur under your account.</li>
+                    <li>Providing accurate and truthful information during registration and in your profile.</li>
+                </ul>
+                <p>We reserve the right to suspend or terminate your account at any time, with or without notice, if we suspect a violation of this Agreement, or for any other reason in our sole discretion.</p>
+
+                <h2 class="text-2xl font-semibold mt-6">3. User Content</h2>
+                <h3 class="text-xl font-medium mt-4">3.1. Ownership and License</h3>
+                <p>You own all of the content and information you post on the Service ("User Content"). However, by posting User Content, you grant us a worldwide, royalty-free, perpetual, irrevocable, non-exclusive, sublicensable, and transferable license to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, publicly perform, and display your User Content in connection with the operation and promotion of the Service. This license allows us to use your profile photos, bio, and other information to make your profile visible to other users and for marketing purposes.</p>
+
+                <h3 class="text-xl font-medium mt-4">3.2. Content Restrictions</h3>
+                <p>You agree that you will not post, upload, or share any User Content that:</p>
+                <ul class="list-disc ml-6 space-y-2">
+                    <li>Is illegal, fraudulent, or promotes illegal activities.</li>
+                    <li>Is defamatory, obscene, pornographic, violent, or sexually explicit.</li>
+                    <li>Infringes on the intellectual property rights (e.g., copyright, trademark) of others.</li>
+                    <li>Is harassing, threatening, or promotes violence or discrimination.</li>
+                    <li>Contains personal contact or banking information (e.g., phone numbers, addresses, credit card details).</li>
+                    <li>Includes images or information of anyone under the age of 18.</li>
+                    <li>Is spam, contains malware, or is otherwise harmful.</li>
+                </ul>
+                <p>We reserve the right to remove any User Content that violates this Agreement and to terminate the account of the user responsible for such content.</p>
+
+                <h2 class="text-2xl font-semibold mt-6">4. Prohibited Conduct</h2>
+                <p>You agree not to do any of the following while using the Service:</p>
+                <ul class="list-disc ml-6 space-y-2">
+                    <li>Use the Service for any illegal or unauthorized purpose.</li>
+                    <li>Harass, stalk, or intimidate other users.</li>
+                    <li>Use the Service to send unsolicited commercial messages or spam.</li>
+                    <li>Attempt to impersonate another person or entity.</li>
+                    <li>Collect or harvest any information about other users without their consent.</li>
+                    <li>Interfere with or disrupt the integrity or performance of the Service.</li>
+                    <li>Attempt to reverse engineer, decompile, or otherwise gain unauthorized access to the Service.</li>
+                    <li>Solicit money or other financial information from other users.</li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold mt-6">5. Disclaimers</h2>
+                <p class="font-mono bg-gray-100 p-3 rounded text-sm leading-relaxed">THE SERVICE IS PROVIDED ON AN "AS-IS" AND "AS-AVAILABLE" BASIS. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT GUARANTEE THAT THE SERVICE WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE, NOR DO WE MAKE ANY WARRANTY AS TO THE ACCURACY OR RELIABILITY OF ANY INFORMATION PROVIDED BY USERS ON THE SERVICE. YOU ARE SOLELY RESPONSIBLE FOR YOUR INTERACTIONS WITH OTHER USERS AND FOR TAKING REASONABLE PRECAUTIONS WHEN COMMUNICATING WITH ANYONE YOU MEET THROUGH THE SERVICE.</p>
+
+                <h2 class="text-2xl font-semibold mt-6">6. Limitation of Liability</h2>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL **Dating Hub Company** BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (A) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SERVICE; (B) THE CONDUCT OR CONTENT OF OTHER USERS OR THIRD PARTIES ON THE SERVICE; OR (C) UNAUTHORIZED ACCESS, USE, OR ALTERATION OF YOUR CONTENT. IN NO EVENT SHALL OUR AGGREGATE LIABILITY FOR ALL CLAIMS RELATING TO THE SERVICE EXCEED THE GREATER OF ONE HUNDRED U.S. DOLLARS ($100.00) OR THE AMOUNT YOU PAID US, IF ANY, IN THE LAST TWELVE MONTHS.</p>
+
+                <h2 class="text-2xl font-semibold mt-6">7. Indemnification</h2>
+                <p>You agree to indemnify, defend, and hold harmless **Dating Hub Company**, its affiliates, officers, directors, employees, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs, or debt, and expenses (including but not limited to attorney's fees) arising from: (a) your use of and access to the Service; (b) your violation of any term of this Agreement; (c) your violation of any third-party right, including without limitation any copyright, property, or privacy right; or (d) any claim that your User Content caused damage to a third party.</p>
+
+                <h2 class="text-2xl font-semibold mt-6">8. Dispute Resolution</h2>
+                <p>This Agreement and any dispute arising out of or in connection with it shall be governed by and construed in accordance with the laws of the State of **New York, USA**, without regard to its conflict of law principles. Any legal action or proceeding related to this Agreement shall be brought exclusively in the state or federal courts located in **New York City, New York, USA**.</p>
+
+                <h2 class="text-2xl font-semibold mt-6">9. Changes to the Terms of Service</h2>
+                <p>We reserve the right to modify this Agreement at any time. When we make changes, we will update the "Last Updated" date at the top of this page. Your continued use of the Service after any such changes constitutes your acceptance of the new Terms of Service. If you do not agree to the new terms, you must stop using the Service and delete your account.</p>
+
+                <h2 class="text-2xl font-semibold mt-6">10. Contact Information</h2>
+                <p>If you have any questions about this Agreement, please contact us at:</p>
+                <p>Email: <a href="mailto:support@datinghub.com" class="text-brand hover:underline">support@datinghub.com</a></p>
+                
+            </div>
+            </div>
+    </main>
+
+    <footer class="mt-12 bg-gray-100 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            <p>&copy; 2025 Dating Hub Company. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="{% url 'privacy' %}" class="hover:text-pink-500 transition duration-150">Privacy Policy</a>
+                <span class="text-gray-400">|</span>
+                <a href="{% url 'terms' %}" class="hover:text-pink-500 transition duration-150">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener("DOMContentLoaded", function() {
+            const mobileMenuButton = document.querySelector(".mobile-menu-button");
+            const mobileMenu = document.querySelector(".mobile-menu");
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener("click", function() {
+                    mobileMenu.classList.toggle("hidden");
+                    
+                    // Toggle hamburger icon
+                    const icon = mobileMenuButton.querySelector("svg");
+                    if (mobileMenu.classList.contains("hidden")) {
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+                    } else {
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+                    }
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener("click", function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.add("hidden");
+                        const icon = mobileMenuButton.querySelector("svg");
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
