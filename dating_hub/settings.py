@@ -1,13 +1,26 @@
 import os
 from pathlib import Path
 
+# Add this import
+import dj_database_url
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-dating-hub-website-2025-key'
+# Updated SECRET_KEY to use environment variable
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-dating-hub-website-2025-key')
 
-DEBUG = True
+# Updated DEBUG to use environment variable
+DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = []
+# Updated ALLOWED_HOSTS for production
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+
+# Add CSRF trusted origins for your domain
+CSRF_TRUSTED_ORIGINS = [
+    'https://datinghub.services',
+    'https://www.datinghub.services',
+    'https://*.railway.app',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -21,6 +34,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this line
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -49,11 +63,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dating_hub.wsgi.application'
 
+# Updated DATABASES for production
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3',
+        conn_max_age=600
+    )
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -76,7 +91,12 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+# Updated STATIC files for production
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']  # This is fine for now
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Keep this for development
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Add this for production
+
+# Add WhiteNoise for static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

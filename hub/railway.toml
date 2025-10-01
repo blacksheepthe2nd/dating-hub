@@ -1,0 +1,10 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn dating_hub.wsgi:application"
+
+[[services]]
+name = "web"
+[services.env]
+PORT = "8000"
